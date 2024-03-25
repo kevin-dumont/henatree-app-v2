@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
+import { useBoolean } from '@hooks/useBoolean';
 import MainNavigation from '@blocks/MainNavigation';
 import SplashScreen from '@blocks/SplashScreen';
-import { useBoolean } from '@hooks/useBoolean';
 import OnBoardingNavigation from '@blocks/OnBoardingNavigation';
 
 const App = () => {

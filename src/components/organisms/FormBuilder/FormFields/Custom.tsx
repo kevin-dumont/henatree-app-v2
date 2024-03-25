@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FormBuilderCustomProps } from '@components/organisms/FormBuilder/types';
+import { FormBuilderCustomProps } from '@components/organisms/FormBuilder/types/types';
 
 const Custom = <K extends string, V>({
   component,

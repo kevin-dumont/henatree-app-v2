@@ -5,20 +5,21 @@ import { Asset } from 'react-native-image-picker';
 import { useNavigation } from '@react-navigation/native';
 
 import FormBuilder from '@components/organisms/FormBuilder';
-import { useFormBuilder } from '@components/organisms/FormBuilder/useFormBuilder';
+import { useFormBuilder } from '@components/organisms/FormBuilder/hooks/useFormBuilder';
 import AvatarFormField from '@blocks/AvatarFormField';
 import LegalFormStep, { LegalConsent } from '@blocks/LegalFormStep';
+import { AuthNavigationProp } from '@typings/navigations';
 
 type FormInputs = {
   pseudo: string;
   email: string;
-  birthdate: Date;
+  birthDate: Date;
   password: string;
   avatar: Asset;
   legalConsent: LegalConsent;
 };
 
-const SignupForm = () => {
+const SignUpForm = () => {
   const { register } = useFormBuilder<FormInputs>({
     defaultValues: {
       legalConsent: {
@@ -28,7 +29,7 @@ const SignupForm = () => {
     },
   });
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthNavigationProp>();
 
   return (
     <FormBuilder>
@@ -46,7 +47,7 @@ const SignupForm = () => {
         title="Quelle est ta date de naissance ?"
         helperText="Nous l’utiliserons pour te mettre en relation avec des personnes de ton âge."
         placeholder="Indique nous ta date de naissance"
-        {...register('birthdate', {
+        {...register('birthDate', {
           rules: { required: true },
           messages: "Merci d'indiquer ta date de naissance",
         })}
@@ -102,10 +103,10 @@ const SignupForm = () => {
               "Vous devez accetper nos conditions d'utilisation et notre politique de protection des données pour continuer",
           },
         })}
-        onNextStepClick={() => navigation.navigate('SignupLoader')}
+        onNextStepClick={() => navigation.navigate('SignUpLoader')}
       />
     </FormBuilder>
   );
 };
 
-export default SignupForm;
+export default SignUpForm;

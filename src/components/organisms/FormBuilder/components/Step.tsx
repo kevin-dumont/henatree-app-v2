@@ -1,23 +1,18 @@
 import React, { useCallback, PropsWithChildren } from 'react';
-import {
-  NavigationProp,
-  ParamListBase,
-  useNavigation,
-} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import R from 'ramda';
-import _ from 'lodash';
 
 import TopBar from '@components/molecules/TopBar';
 import Text from '@components/atoms/Text';
 import Container from '@components/atoms/Container';
 import Title from '@components/atoms/Title';
-import { InternalStepProps } from '@components/organisms/FormBuilder/types';
+import { InternalStepProps } from '@components/organisms/FormBuilder/types/types';
 import CircleButton from '@components/molecules/CircleButton';
 import ArrowRightIcon from '@components/atoms/Icons/ArrowRightIcon';
 import { COLORS, MARGINS } from '@constants/theme';
 import Padder from '@components/atoms/Padder';
+import { isNotUndefined } from '@services/isNotUndefined';
 
 export const Step = <K extends string, V>({
   prevStep,
@@ -35,9 +30,7 @@ export const Step = <K extends string, V>({
   onNextStepClick,
   showBackButton = true,
 }: PropsWithChildren<InternalStepProps<K, V>>) => {
-  const navigation = useNavigation();
-
-  type Nav = ReturnType<NavigationProp<ParamListBase>['navigate']>;
+  const navigation = useNavigation<Record<string, any>>();
 
   const onNextClick = useCallback(() => {
     setValue(value);
@@ -46,23 +39,23 @@ export const Step = <K extends string, V>({
       return;
     }
 
-    const navigate = R.when<K | undefined, Nav>(
-      R.pipe(_.isUndefined, R.not),
-      navigation.navigate,
-    );
-
     if (onNextStepClick) {
-      onNextStepClick(R.always(navigate(nextStep)));
+      onNextStepClick(() => navigation.navigate(nextStep));
     } else {
-      navigate(nextStep);
+      if (isNotUndefined(nextStep)) {
+        navigation.navigate(nextStep);
+      }
     }
 
     onComplete?.({ name, value });
   }, [nextStep, onNextStepClick, value, validate]);
 
   const onPrevClick = useCallback(() => {
-    const goBack = R.ifElse(R.not, navigation.goBack, navigation.navigate);
-    goBack(prevStep);
+    if (prevStep) {
+      navigation.navigate(prevStep);
+    } else {
+      navigation.goBack();
+    }
   }, [prevStep]);
 
   const hasNextButton = nextStep || !!onNextStepClick;

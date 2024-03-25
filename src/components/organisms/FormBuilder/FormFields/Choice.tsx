@@ -1,9 +1,9 @@
 import React from 'react';
-import { isUndefined } from 'lodash';
 
 import Button from '@components/molecules/Button';
+import { isUndefined } from '@services/isUndefined';
 
-import { FormBuilderChoiceProps } from '../types';
+import { FormBuilderChoiceProps } from '../types/types';
 
 const Choice = <K extends string, V extends string>(
   props: FormBuilderChoiceProps<K, V>,

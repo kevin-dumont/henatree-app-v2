@@ -9,6 +9,7 @@ import { COLORS, FONTS, MARGINS } from '@constants/theme';
 import Loader from '@components/atoms/Loader';
 import Padder from '@components/atoms/Padder';
 import { useTimeouts } from '@hooks/useTimeouts';
+import { AuthNavigationProp } from '@typings/navigations';
 
 const PROGRESS_TIMEOUTS = [
   [0.1, 100],
@@ -20,11 +21,11 @@ const PROGRESS_TIMEOUTS = [
   [1, 3000],
 ];
 
-const SignupLoader = () => {
+const SignUpLoader = () => {
   const [progress, setProgress] = useState(0);
   const [addTimeout, clearTimeouts] = useTimeouts();
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthNavigationProp>();
 
   useEffect(() => {
     PROGRESS_TIMEOUTS.forEach(([percent, time]) =>
@@ -80,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignupLoader;
+export default SignUpLoader;

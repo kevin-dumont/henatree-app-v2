@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
-import { FormBuilderDateProps } from '@components/organisms/FormBuilder/types';
+import { FormBuilderDateProps } from '@components/organisms/FormBuilder/types/types';
 import Text from '@components/atoms/Text';
 import { COLORS, MARGINS } from '@constants/theme';
 import { useBoolean } from '@hooks/useBoolean';

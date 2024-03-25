@@ -3,8 +3,6 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      'lodash',
-      'ramda',
       [
         '@babel/plugin-transform-react-jsx',
         {
@@ -21,7 +19,7 @@ module.exports = function (api) {
             '@navigations': './src/navigations',
             '@typings': './src/typings',
             '@constants': './src/constants',
-            '@utils': './src/utils',
+            '@services': './src/services',
             '@blocks': './src/blocks',
             '@assets': './assets',
             '@hooks': './src/hooks',

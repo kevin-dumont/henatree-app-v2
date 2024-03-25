@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormBuilder from '@components/organisms/FormBuilder';
-import { useFormBuilder } from '@components/organisms/FormBuilder/useFormBuilder';
+import { useFormBuilder } from '@components/organisms/FormBuilder/hooks/useFormBuilder';
 
 type FormInputs = {
   favoriteHangouts: string;

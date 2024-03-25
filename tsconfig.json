@@ -11,7 +11,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@typings/*": ["src/typings/*"],
       "@constants/*": ["src/constants/*"],
-      "@utils/*": ["src/utils/*"],
+      "@services/*": ["src/services/*"],
       "@blocks/*": ["src/blocks/*"],
       "@assets/*": ["assets/*"],
       "@i18n/*": ["src/i18n/*"]

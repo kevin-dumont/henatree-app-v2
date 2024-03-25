@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import { FormBuilderCustomComponentProps } from '@components/organisms/FormBuilder/types';
+import { FormBuilderCustomComponentProps } from '@components/organisms/FormBuilder/types/types';
 import LabelledCheckbox from '@components/molecules/LabelledCheckbox';
 import Text from '@components/atoms/Text';
 import { COLORS, MARGINS } from '@constants/theme';

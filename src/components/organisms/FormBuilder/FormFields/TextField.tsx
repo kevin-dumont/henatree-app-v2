@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 
 import Text from '@components/atoms/Text';
-import { FormBuilderTextProps } from '@components/organisms/FormBuilder/types';
+import { FormBuilderTextProps } from '@components/organisms/FormBuilder/types/types';
 import { COLORS, FONTS, MARGINS } from '@constants/theme';
 import Padder from '@components/atoms/Padder';
 

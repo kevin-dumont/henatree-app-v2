@@ -17,12 +17,13 @@ import FacebookIcon from '@components/atoms/Icons/FacebookIcon';
 import GoogleIcon from '@components/atoms/Icons/GoogleIcon';
 import TopBar from '@components/molecules/TopBar';
 import Title from '@components/atoms/Title';
+import { AuthNavigationProp } from '@typings/navigations';
 
 const LoginScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AuthNavigationProp>();
 
   const onBackClick = useCallback(() => {
-    navigation.navigate('Signup');
+    navigation.navigate('SignUp');
   }, []);
 
   return (

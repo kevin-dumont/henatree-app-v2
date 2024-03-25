@@ -5,7 +5,7 @@ import { KeyOf } from '@typings/utils';
 
 export type ValidationResultError = {
   isValid: false;
-  type: KeyOf<FormRules<any>>;
+  type: KeyOf<FormRule<any>>;
 };
 
 export type ValidationResultValid = {
@@ -15,18 +15,18 @@ export type ValidationResultValid = {
 
 export type ValidationResult = ValidationResultError | ValidationResultValid;
 
-export type FormRules<V> = {
+export type FormRule<V> = {
   required?: boolean;
   pattern?: RegExp;
   validate?: (field: V) => boolean;
 };
 
 export type FormErrorMessages =
-  | Partial<Record<KeyOf<FormRules<any>>, string>>
+  | Partial<Record<KeyOf<FormRule<any>>, string>>
   | string;
 
 export type UseFormRequireConfig<V> = {
-  rules: FormRules<V>;
+  rules: FormRule<V>;
   messages?: FormErrorMessages;
 };
 
@@ -37,7 +37,7 @@ export type StepProps<K extends string, V> = {
   title: string;
   helperText?: ReactNode;
   error?: string;
-  rules?: FormRules<V>;
+  rules?: FormRule<V>;
   onComplete?: OnCompleteParams<K, V>;
   onNextStepClick?: (onDefaultNextStepClick: () => void) => void;
   value: V;

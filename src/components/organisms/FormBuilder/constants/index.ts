@@ -1,4 +1,4 @@
-import { FormErrorMessages } from './types';
+import { FormErrorMessages } from '../types/types';
 
 export const DEFAULT_ERROR_MESSAGES: Required<
   Exclude<FormErrorMessages, string>

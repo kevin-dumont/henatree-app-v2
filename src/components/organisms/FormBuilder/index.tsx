@@ -1,8 +1,8 @@
 import React, { Children } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import type { FormBuilderProps } from '@components/organisms/FormBuilder/types';
-import { Step } from '@components/organisms/FormBuilder/Step';
+import type { FormBuilderProps } from '@components/organisms/FormBuilder/types/types';
+import { Step } from '@components/organisms/FormBuilder/components/Step';
 import TextField from '@components/organisms/FormBuilder/FormFields/TextField';
 import Date from '@components/organisms/FormBuilder/FormFields/Date';
 import Custom from '@components/organisms/FormBuilder/FormFields/Custom';

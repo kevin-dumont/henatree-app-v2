@@ -3,10 +3,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 import LoginScreen from 'src/navigations/LoginScreen';
-import SignupScreen from 'src/navigations/SigninScreen';
-import SignupForm from 'src/navigations/SignupForm';
+import SignUpScreen from 'src/navigations/SigninScreen';
+import SignUpForm from '@navigations/SignUpForm';
 import { COLORS } from 'src/constants/theme';
-import SignupLoader from 'src/navigations/SignupLoader';
+import SignUpLoader from '@navigations/SignUpLoader';
 import SetupProfile from 'src/navigations/SetupProfile';
 
 const Stack = createStackNavigator();
@@ -19,10 +19,10 @@ const OnBoardingNavigation = () => {
           cardStyle: { backgroundColor: COLORS.neutral.white },
           headerShown: false,
         }}>
-        <Stack.Screen name="Signup" component={SignupScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="SignupForm" component={SignupForm} />
-        <Stack.Screen name="SignupLoader" component={SignupLoader} />
+        <Stack.Screen name="SignUpForm" component={SignUpForm} />
+        <Stack.Screen name="SignUpLoader" component={SignUpLoader} />
         <Stack.Screen name="SetupProfile" component={SetupProfile} />
       </Stack.Navigator>
     </NavigationContainer>

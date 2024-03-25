@@ -11,12 +11,13 @@ import Center from '@components/atoms/Center';
 import Separator from '@components/atoms/Separator';
 import RoundedTop from '@components/atoms/RoundedTop';
 import BgImage from '@assets/images/bg_login.png';
+import { AuthNavigationProp } from '@typings/navigations';
 
-const SignupScreen = () => {
-  const navigation = useNavigation();
+const SignUpScreen = () => {
+  const navigation = useNavigation<AuthNavigationProp>();
 
-  const onSignupClick = useCallback(() => {
-    navigation.navigate('SignupForm');
+  const onSignUpClick = useCallback(() => {
+    navigation.navigate('SignUpForm');
   }, []);
 
   return (
@@ -35,8 +36,8 @@ const SignupScreen = () => {
           </Padder>
         </Center>
 
-        <Button variant="secondary" onPress={onSignupClick}>
-          Je m'inscris
+        <Button variant="secondary" onPress={onSignUpClick}>
+          S'inscrire
         </Button>
 
         <Padder marginVertical={MARGINS.XXL}>
@@ -59,7 +60,7 @@ const SignupScreen = () => {
   );
 };
 
-export default SignupScreen;
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
   imgBg: {

@@ -1,21 +1,14 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import {
-  BottomTabBarOptions,
-  BottomTabBarProps,
-} from '@react-navigation/bottom-tabs';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 import { MENU_ITEMS, MenuItemKey } from '@blocks/MainNavigation/constants';
 import { MARGINS, SHADOW } from '@constants/theme';
 
-const TabBar = ({
-  state,
-  descriptors,
-  navigation,
-}: BottomTabBarProps<BottomTabBarOptions>) => {
+const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
 
-  if (focusedOptions.tabBarVisible === false) {
+  if (focusedOptions.tabBarShowLabel === false) {
     return null;
   }
 
