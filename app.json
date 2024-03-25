@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "henatree",
+    "slug": "henatree",
+    "version": "1.0.0",
+    "entryPoint": "./src/App.tsx",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.henatree"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Circular-Black.ttf",
+            "./assets/fonts/Circular-BlackItalic.ttf",
+            "./assets/fonts/Circular-Bold.ttf",
+            "./assets/fonts/Circular-BoldItalic.ttf",
+            "./assets/fonts/Circular-Book.ttf",
+            "./assets/fonts/Circular-BookItalic.ttf",
+            "./assets/fonts/Circular-Medium.ttf",
+            "./assets/fonts/Circular-MediumItalic.ttf"
+          ]
+        }
+      ]
+    ]
+  }
+}
