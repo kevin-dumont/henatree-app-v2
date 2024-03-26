@@ -1,4 +1,4 @@
-import { isNotUndefined } from '@services/isNotUndefined';
+import { isNotUndefined } from '@/services/isNotUndefined';
 
 describe('isNotUndefined', () => {
   it('should return false if value passed is undefined', () => {

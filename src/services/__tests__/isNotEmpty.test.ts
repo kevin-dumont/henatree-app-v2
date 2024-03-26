@@ -1,4 +1,4 @@
-import { isNotEmpty } from '@services/isNotEmpty';
+import { isNotEmpty } from '@/services/isNotEmpty';
 
 describe('isNotEmpty', () => {
   it('should return false if value passed is null, empty string or undefined', () => {

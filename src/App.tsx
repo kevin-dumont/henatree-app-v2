@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
-import { useBoolean } from '@hooks/useBoolean';
-import MainNavigation from '@blocks/MainNavigation';
-import SplashScreen from '@blocks/SplashScreen';
-import OnBoardingNavigation from '@blocks/OnBoardingNavigation';
+import { useBoolean } from '@/hooks/useBoolean';
+import MainNavigation from '@/components/business/MainNavigation';
+import SplashScreen from '@/components/business/SplashScreen';
+import OnBoardingNavigation from '@/components/business/OnBoardingNavigation';
 
 const App = () => {
   const [isInit, finishInit] = useBoolean();
